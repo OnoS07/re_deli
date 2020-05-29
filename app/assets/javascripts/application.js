@@ -52,9 +52,9 @@ $(document).on("turbolinks:load", function(){
   });
 
  //= 画像選択ボタン
-  $(".image-btn").click(function){
+  $(".image-btn").click(function(){
     $(".image-select").click();
-  };
+  });
 
 
 })

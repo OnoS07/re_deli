@@ -4,40 +4,42 @@
 			<% if flash[:notice] %>
 			 	<div class="flash"><%= flash[:notice]%></div>
 			<% end %>
-			<% @posts.each do |post| %>
+
 			<div class="post-container flex">
 				<div class="post-block">
-					<%= link_to post_path(post) do %>
-						<%= attachment_image_tag post, :post_image, format:"jpg",
+						<%= attachment_image_tag @post, :post_image, format:"jpg",
 						 class:"post-image" %>
-					 <% end %>
 				</div>
 				<div class="content-block flex">
 					<div class="profile-content">
-						<%= link_to user_path(post.user) do %>
-							<%= attachment_image_tag post.user, :profile_image, format:"jpg",
+						<%= link_to user_path(@user) do %>
+							<%= attachment_image_tag @user, :profile_image, format:"jpg",
 								size:"100x100", fallback:"no_image.jpg", class:"profile-image" %>
+								<br><%= @user.name %>
 						<% end %>
 					</div>
 					<div class="text-content">
 						<span class="title-text">
-							<%= link_to post_path(post) do %>
-								<i class="fas fa-paw fa-2x"><%= post.title %></i>
-							<% end %><br>
+								<i class="fas fa-paw fa-2x"><%= @post.title %></i><br>
 						</span>
 						<span class="body-text">
-							<%= post.body %>
+							<%= @post.body %>
 						</span><br>
-						<div class="count-text">
-							<i class="far fa-comment"><%= post.post_comments.count %></i>
+						<div class="action-text">
+							<i class="far fa-comment"><%= @post.post_comments.count %></i>
 							<i class="fas fa-thumbs-up", style="color:silver;"></i>
-							<%= post.favorites.count %>
+							<%= @post.favorites.count %>
+							<br>
+							<% if current_user == @user %>
+								<%= link_to "編集", edit_post_path(@post) %>|
+								<%= link_to "削除", post_path(@post), method: :delete,
+									data: { confirm: '本当に削除しますか?' } %>
+							<% end %>
 						</div>
 
 					</div>
 				</div>
 			</div>
-			<% end %>
 
 		</div>
 	</div>
