@@ -37,10 +37,18 @@ a{
 	color: black;
 }
 
+/*flash[:notice]のクラス*/
 .flash{
 	color: green;
     font-family: impact;
     font-size: 25px;
+}
+
+.alert{
+	border: 2px solid red;
+	background-color: #ffc0cb;
+    margin-top: 10px;
+    padding-left: 10%;
 }
 
 /* 入力ページ*/
