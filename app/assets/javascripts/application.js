@@ -51,6 +51,11 @@ $(document).on("turbolinks:load", function(){
       $("html, body").animate({"scrollTop":0},300)
   });
 
+ //= 画像選択ボタン
+  $(".image-btn").click(function){
+    $(".image-select").click();
+  };
+
 
 
 })

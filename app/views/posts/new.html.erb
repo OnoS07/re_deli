@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="input-form">
+        <h2><span class="input-title">New Post</span></h2>
+      <%= form_for(@post) do |f| %>
+        <div class="field">
+          <%= f.label :post_image, class:"btn btn-primary image-btn" %>
+          <%= f.attachment_field :post_image, style:"display:none;", class:"image-select" %>
+        </div>
+
+        <div class="field">
+          <%= f.label :title %><br />
+          <%= f.text_field :title, autofocus: true, autocomplete: "off", class:"form-control",
+            placeholder:"shop name..." %>
+        </div>
+
+        <div class="field">
+          <%= f.label :body %><br />
+          <%= f.text_area :body, rows:"5", autofocus: true, autocomplete: "off",
+            class:"form-control", placeholder:"introduction/review..." %>
+        </div>
+
+        <div class="field input-btn">
+          <%= f.submit "CREATE", class:"btn btn-warning btn-block" %>
+        </div>
+      <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
