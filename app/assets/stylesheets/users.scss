@@ -1,3 +1,33 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* topページ skippr*/
+.top-contents{
+	height: 400px;
+}
+
+.top1{
+	background-image: url(top1.jpg);
+	background-position: center;
+}
+
+.top2{
+	background-image: url(top2.jpg);
+}
+.top3{
+	background-image: url(top3.jpg);
+	background-position: 0px -80px;
+}
+.top4{
+	background-image: url(top4.jpg);
+	background-position: center;
+}
+.top5{
+	background-image: url(top5.jpg);
+	background-position: center;
+}
+.top6{
+	background-image: url(top6.jpg);
+	background-position: center;
+}
