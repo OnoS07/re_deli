@@ -62,4 +62,54 @@ a{
 	width: 80%;
 	margin: 20px auto;
 }
+/*投稿とか表示ページ flexレイアウト*/
+.post-container{
+	display: flex;
+	background-color: white;
+	flex-direction: column;
+	margin: 20px 0;
+	align-items: center;
+}
+
+.post-container > .post-block{
+	width: 60%;
+}
+
+.post-image{
+	height: 100%;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.content-block{
+	display: flex;
+	background-color: white;
+	margin: 20px 0;
+	align-items: center;
+    width: 60%;
+}
+
+.content-block > .profile-content{
+	width: 25%;
+	padding: 10px;
+	text-align: center;
+}
+
+.profile-image{
+	border-radius: 50%;
+}
+
+.content-block > .text-content{
+	width: 55%;
+	padding: 10px;
+}
+
+.body-text{
+	margin-left: 15px;
+	font-size: 120%;
+}
+
+.count-text{
+	float:right;
+}
 
