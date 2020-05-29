@@ -41,6 +41,25 @@ a{
 	color: green;
     font-family: impact;
     font-size: 25px;
-    padding-left: 10%;
+}
+
+/* 入力ページ*/
+.input-form{
+	background-color: white;
+	margin: 30px 0;
+	padding: 20px;
+}
+
+.input-title{
+	border-bottom: 2px solid orange
+}
+
+.field{
+	margin-top: 10px;
+}
+
+.input-btn{
+	width: 80%;
+	margin: 20px auto;
 }
 

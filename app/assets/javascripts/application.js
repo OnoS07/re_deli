@@ -22,6 +22,7 @@
 
 $(document).on("turbolinks:load", function(){
 
+ //=skippr
   $(".top-contents").skippr({
       // スライドショーの変化 ("fade" or "slide")
       transition : 'fade',
@@ -45,7 +46,10 @@ $(document).on("turbolinks:load", function(){
       hidePrevious : false
   });
 
-
+ //= footer Go Topボタン
+  $(".top-btn").click(function(){
+      $("html, body").animate({"scrollTop":0},300)
+  });
 
 
 
