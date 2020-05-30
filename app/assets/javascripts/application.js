@@ -51,10 +51,11 @@ $(document).on("turbolinks:load", function(){
       $("html, body").animate({"scrollTop":0},300)
   });
 
- //= 画像選択ボタン
+ /* 画像選択ボタン クリックすると2回起こるため、いったん保留
   $(".image-btn").click(function(){
-    $(".image-select").click();
+    $(".image-select").click()
   });
+ */
 
 
 })

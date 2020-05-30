@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@poss = @user.posts.order(id:"DESC")
+		@posts = @user.posts.order(id:"DESC")
 	end
 
 	def edit
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		if @user.update(user_params)
 			flash[:notice] = "UPDATE YOUR PROFILE !"
-			reidrect_to user_path(@user)
+			redirect_to user_path(@user)
 		else
 			render("users/edit")
 		end
