@@ -51,6 +51,15 @@ $(document).on("turbolinks:load", function(){
       $("html, body").animate({"scrollTop":0},300)
   });
 
+ //= ナビゲーションバー の色変更
+  $(".nav-link").hover(
+    function(){
+      $(this).css("color","orange");
+    },
+    function(){
+      $(this).css("color","black");
+    });
+
  /* 画像選択ボタン クリックすると2回起こるため、いったん保留
   $(".image-btn").click(function(){
     $(".image-select").click()
