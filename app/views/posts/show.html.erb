@@ -28,8 +28,8 @@
 						<div class="action-text">
 							<i class="far fa-comment"><%= @post.post_comments.count %></i>
 							<i class="fas fa-thumbs-up", style="color:silver;"></i>
-							<%= @post.favorites.count %>
-							<br>
+							<%= @post.favorites.count %><br>
+							<%= @post.created_at.strftime('%Y/%m/%d') %><br>
 							<% if current_user == @user %>
 								<%= link_to "編集", edit_post_path(@post) %>|
 								<%= link_to "削除", post_path(@post), method: :delete,
@@ -40,6 +40,53 @@
 					</div>
 				</div>
 			</div>
+
+			<section class="input-form">
+	        <h2><span class="input-title">Comments</span></h2>
+			<% @post_comments.each do |comment| %>
+			<div class="content-block flex">
+				<div class="profile-content">
+						<%= attachment_image_tag comment.user, :profile_image, format:"jpg",
+							size:"100x100", fallback:"no_image.jpg",
+							class:"profile-image" %>
+				</div>
+				<div class="text-content">
+					<span class="title-text">
+						<i class="fas fa-dog"><%= comment.user.name %></i><br>
+					</span>
+					<span class="body-text">
+						<%= comment.comment %>
+					</span><br>
+					<div class="action-text">
+						<%= comment.created_at.strftime('%Y/%m/%d') %>
+						<% if comment.user == current_user %>
+							<%= link_to "削除", post_post_comment_path(comment),method: :delete %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<div style="border-bottom: 1px solid silver"></div>
+			<% end %>
+			</section>
+
+			<section>
+			<% if flash[:comment] %>
+			 	<div class="comment"><%= flash[:comment]%></div>
+			<% end %>
+			<div class="input-form">
+	        <h2><span class="input-title">New Comment</span></h2>
+		      <%= form_for [@post,@post_comment] do |f| %>
+		        <div class="field">
+		          <%= f.label :comment %><br />
+		          <%= f.text_area :comment, rows:"3", autocomplete: "off",
+		            class:"form-control" %>
+		        </div>
+		        <div class="field input-btn">
+		          <%= f.submit "NEW COMMENT", class:"btn btn-warning btn-block" %>
+		        </div>
+		      <% end %>
+	      	</div>
+			</section>
 
 		</div>
 	</div>

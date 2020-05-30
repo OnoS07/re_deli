@@ -15,6 +15,8 @@ class PostsController < ApplicationController
 	def show
 		@post = Post.find(params[:id])
 		@user = User.find(@post.user_id)
+		@post_comment = PostComment.new
+		@post_comments = @post.post_comments.order(id: "DESC")
 	end
 
 	def new
@@ -49,6 +51,7 @@ class PostsController < ApplicationController
 	def destroy
 		@post = Post.find(params[:id])
 		@post.destroy
+		flash[:notice] = "DELETE YOUR POST"
 		redirect_to posts_path
 	end
 

@@ -44,6 +44,12 @@ a{
     font-size: 25px;
 }
 
+.comment{
+	color: red;
+    font-family: impact;
+    font-size: 20px;
+}
+
 .alert{
 	border: 2px solid red;
 	background-color: #ffc0cb;
@@ -93,7 +99,7 @@ a{
 	display: flex;
 	background-color: white;
 	margin: 20px 0;
-    padding: 0 20%;
+    padding: 0 10%;
 	align-items: center;
     width: 100%;
     justify-content:center
