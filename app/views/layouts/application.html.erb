@@ -43,16 +43,19 @@
               </li>
             <% else %>
               <li class="nav-item">
+                <%= link_to "Top", root_path, class:"nav-link" %>
+              </li>
+              <li class="nav-item">
                 <%= link_to "About", about_path, class:"nav-link" %>
               </li>
               <li class="nav-item">
                 <%= link_to new_user_registration_path, class:"nav-link" do %>
-                  新規登録
+                  Sign up
                 <% end %>
               </li>
               <li class="nav-item">
                 <%= link_to new_user_session_path, class:"nav-link" do %>
-                  ログイン
+                  Log in
                 <% end %>
               </li>
             <% end %>

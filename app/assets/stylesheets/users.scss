@@ -36,8 +36,8 @@
 .about-title{
 	font-family: impact;
 	font-size: 25px;
-	color: orange;
-	border-bottom: 1px solid black;
+	color: black;
+	border-bottom: 1px solid orange;
 }
 
 .clearfix:after{
@@ -56,10 +56,6 @@
 	list-style-type: none;
 	width: 25%;
 	font-family: impact;
-}
-
-ul{
-	padding-left: 0px;
 }
 
 #tab-menu a{
@@ -81,8 +77,40 @@ ul{
 #tab-contents .tab{
 	padding: 30px;
 	background-color: white;
+	margin: 0 auto;
 }
 
+.tab1-image{
+	background-image: url(tab1.jpg);
+    background-size: contain;
+	background-repeat:  no-repeat;
+	background-position: center;
+	height: 500px;
+}
+
+.tab2-image{
+	background-image: url(tab2.jpg);
+    background-size: contain;
+	background-repeat:  no-repeat;
+	background-position: center;
+	height: 700px;
+}
+
+.tab3-image{
+	background-image: url(tab3.jpg);
+    background-size: contain;
+	background-repeat:  no-repeat;
+	background-position: center;
+	height: 700px;
+}
+
+.tab4-image{
+	background-image: url(tab4.jpg);
+    background-size: contain;
+	background-repeat:  no-repeat;
+	background-position: center;
+	height: 700px;
+}
 
 
 
