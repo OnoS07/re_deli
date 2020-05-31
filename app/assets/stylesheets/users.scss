@@ -31,3 +31,60 @@
 	background-image: url(top6.jpg);
 	background-position: center;
 }
+
+//* aboutページ
+.about-title{
+	font-family: impact;
+	font-size: 25px;
+	color: orange;
+	border-bottom: 1px solid black;
+}
+
+.clearfix:after{
+	content:"";
+	clear: both;
+	display: block;
+}
+
+#tab-menu{
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+#tab-menu li{
+	float: left;
+	list-style-type: none;
+	width: 25%;
+	font-family: impact;
+}
+
+ul{
+	padding-left: 0px;
+}
+
+#tab-menu a{
+	color: black;
+	text-decoration: none;
+	display: block;
+	padding: 20px;
+	text-align: center;
+	background-color: white;
+	border: 1px solid black;
+}
+
+#tab-menu .active{
+	border: 2px solid orange;
+	color: orange;
+	border-bottom: none;
+}
+
+#tab-contents .tab{
+	padding: 30px;
+	background-color: white;
+}
+
+
+
+
+
+

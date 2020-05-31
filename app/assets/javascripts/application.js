@@ -60,6 +60,20 @@ $(document).on("turbolinks:load", function(){
       $(this).css("color","black");
     });
 
+  //*aboutページ タブメニュー
+  $('#tab-contents .tab[id != "tab1"]').hide();
+
+  $("#tab-menu a").on("click",function(){
+    $("#tab-contents .tab").hide();
+    $("#tab-menu .active").removeClass("active");
+    $(this).addClass("active");
+    $($(this).attr("href")).show();
+    return false;
+  });
+
+
+
+
  /* 画像選択ボタン クリックすると2回起こるため、いったん保留
   $(".image-btn").click(function(){
     $(".image-select").click()
