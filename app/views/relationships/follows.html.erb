@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="input-form">
+				<h2><span class="input-title">Follow Users</span></h2>
+			</div>
+			<% @users.each do |user| %>
+			<div class="content-block flex">
+				<div class="profile-content">
+					<%= link_to user_path(user) do %>
+					<%= attachment_image_tag user, :profile_image, format:"jpg",
+						size:"150x150", fallback:"no_image.jpg",
+						class:"profile-image" %><% end %><br>
+					<% if user == current_user %>
+						<%= link_to "編集", edit_user_path(user) %>
+					<% end %>
+				</div>
+				<div class="text-content">
+					<span class="title-text">
+							<i class="fas fa-dog fa-2x"><%= user.name %></i><br>
+					</span>
+					<span class="body-text">
+						<%= user.introduction %>
+					</span><br>
+					<div class="action-text">
+						<%= link_to user_follows_path(user), style:"margin-right:10px;" do %>
+							Follow:<%= user.following_user.count %>
+						<% end %>
+						<%= link_to user_followers_path(user) do %>
+							Follower:<%= user.follower_user.count %>
+						<% end %>
+						<% if current_user != user %>
+							<% if current_user.following?(user) %>
+								<%= link_to "フォローをやめる", user_relationships_path(user),
+									class:"btn btn-secondary btn-sm", method: :delete %>
+							<% else %>
+								<%= link_to "フォローする", user_relationships_path(user),
+									class:"btn btn-warning btn-sm", method: :post %>
+							<% end %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
