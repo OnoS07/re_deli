@@ -71,14 +71,18 @@ $(document).on("turbolinks:load", function(){
     return false;
   });
 
-
-
-
- /* 画像選択ボタン クリックすると2回起こるため、いったん保留
-  $(".image-btn").click(function(){
-    $(".image-select").click()
+  //*検索フォーム
+  $(".search-btn").click(function(){
+   $("html, body").animate({"scrollTop":0},300);
+    if($(".search-form").hasClass("open")){
+      $(".search-form").removeClass("open");
+      $(".search-form").slideUp("slow");
+    }else{
+      $(".search-form").addClass("open");
+      $(".search-form").slideDown("slow");
+    };
   });
- */
+
 
 
 })
