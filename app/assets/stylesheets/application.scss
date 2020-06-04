@@ -107,9 +107,8 @@ a{
 }
 
 .content-block > .profile-content{
-	width: 30%;
+	width: 20%;
 	padding: 10px;
-	text-align: center;
 }
 
 .profile-image{
@@ -130,3 +129,8 @@ a{
 	float:right;
 }
 
+/* 検索フォーム*/
+.select{
+	vertical-align:middle;
+	font-size :12px;
+}
