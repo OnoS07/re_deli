@@ -8,9 +8,10 @@
 			<% @records.each do |user| %>
 			<div class="content-block flex">
 				<div class="profile-content">
+					<%= link_to user_path(user) do %>
 					<%= attachment_image_tag user, :profile_image, format:"jpg",
 						size:"150x150", fallback:"no_image.jpg",
-						class:"profile-image" %><br>
+						class:"profile-image" %><% end %><br>
 					<% if user == current_user %>
 						<%= link_to "編集", edit_user_path(user) %>
 					<% end %>
