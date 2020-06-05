@@ -1,0 +1,27 @@
+<% if flash[:notice] %>
+ 	<div class="flash"><%= flash[:notice]%></div>
+<% end %>
+<% post_comments.each do |comment| %>
+<div class="content-block flex">
+	<div class="profile-content">
+			<%= attachment_image_tag comment.user, :profile_image, format:"jpg",
+				size:"100x100", fallback:"no_image.jpg",
+				class:"profile-image" %>
+	</div>
+	<div class="text-content">
+		<span class="title-text">
+			<i class="fas fa-dog"><%= comment.user.name %></i><br>
+		</span>
+		<span class="body-text">
+			<%= comment.comment %>
+		</span><br>
+		<div class="action-text">
+			<%= comment.created_at.strftime('%Y/%m/%d') %>
+			<% if comment.user == current_user %>
+				<%= link_to "削除", post_post_comments_path(comment),method: :delete, remote: true  %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div style="border-bottom: 1px solid silver"></div>
+<% end %>
