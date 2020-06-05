@@ -27,15 +27,9 @@
 						</span><br>
 						<div class="action-text">
 							<i class="far fa-comment"><%= @post.post_comments.count %></i>
-							<% if @post.favorited_by?(current_user) %>
-								<%= link_to post_favorites_path(@post), method: :delete do %>
-								<i class="fas fa-thumbs-up", style="color:orange;"></i><% end %>
-								<%= @post.favorites.count %><br>
-							<% else %>
-								<%= link_to post_favorites_path(@post), method: :post do %>
-								<i class="fas fa-thumbs-up", style="color:silver;"></i><% end %>
-								<%= @post.favorites.count %><br>
-							<% end %>
+							<span class="favorite_<%= @post.id %>" >
+								<%= render "favorite", post: @post %>
+							</span>
 							<%= @post.created_at.strftime('%Y/%m/%d') %><br>
 							<% if current_user == @user %>
 								<%= link_to "編集", edit_post_path(@post) %>|

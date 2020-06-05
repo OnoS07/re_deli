@@ -30,8 +30,9 @@
 						</span><br>
 						<div class="action-text">
 							<i class="far fa-comment"><%= post.post_comments.count %></i>
-							<i class="fas fa-thumbs-up", style="color:silver;"></i>
-							<%= post.favorites.count %>
+							<span class="favorite_<%= post.id %>" >
+								<%= render partial: "favorite",locals:{ post: post } %>
+							</span>
 						</div>
 					</div>
 				</div>

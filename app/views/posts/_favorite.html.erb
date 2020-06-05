@@ -1,0 +1,9 @@
+<% if post.favorited_by?(current_user) %>
+	<%= link_to post_favorites_path(post), method: :delete, remote: true do %>
+	<i class="fas fa-thumbs-up", style="color:orange;"></i><% end %>
+	<%= post.favorites.count %><br>
+<% else %>
+	<%= link_to post_favorites_path(post), method: :post, remote: true do %>
+	<i class="fas fa-thumbs-up", style="color:silver;"></i><% end %>
+	<%= post.favorites.count %><br>
+<% end %>
