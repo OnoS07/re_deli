@@ -1,0 +1,15 @@
+<%= link_to user_follows_path( user), style:"margin-right:10px;" do %>
+	Follow:<%= user.following_user.count %>
+<% end %>
+<%= link_to user_followers_path(user) do %>
+	Follower:<%= user.follower_user.count %>
+<% end %>
+<% if current_user != user %>
+	<% if current_user.following?(user) %>
+		<%= link_to "フォローをやめる", user_relationships_path(user),
+			class:"btn btn-secondary btn-sm", method: :delete, remote: true%>
+	<% else %>
+		<%= link_to "フォローする", user_relationships_path(user),
+			class:"btn btn-warning btn-sm", method: :post, remote: true %>
+	<% end %>
+<% end %>

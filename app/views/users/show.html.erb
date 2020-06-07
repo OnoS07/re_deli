@@ -4,9 +4,8 @@
 			<% if flash[:notice] %>
 			 	<div class="flash"><%= flash[:notice]%></div>
 			<% end %>
-			<div class="relationship_<%= @user.id %>">
-				<%= render "info", user: @user %>
-			</div>
+
+			<%= render "info", user: @user %>
 
 			<% @posts.each do |post| %>
 			<div class="post-container flex">
