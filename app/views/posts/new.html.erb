@@ -35,14 +35,14 @@
 
         <div class="field">
           <%= f.label :postal_code %><br />
-          <%= f.text_field :postal_code, autofocus: true, placeholder: 'postal_code', class: "postal_code" %>
+          <%= f.text_field :postal_code, autofocus: true, placeholder: 'postal_code', class: "postal_code", id: "address_zipcode" %>
         </div>
 
         <div class="field">
           <%= f.label :prefecture_code %><br>
-          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :code, :name, class: "address" %>
-          <%= f.text_field :city, autofocus: true, placeholder: 'ciry', class: "address" %>
-          <%= f.text_field :building, autofocus: true, placeholder: 'building', class: "address" %>
+          <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, class: "address" %>
+          <%= f.text_field :city, autofocus: true, placeholder: 'city', class: "address", id:"address_city" %>
+          <%= f.text_field :building, autofocus: true, placeholder: 'building', class: "address", id: "address_street" %>
         </div>
 
         <div class="field input-btn">

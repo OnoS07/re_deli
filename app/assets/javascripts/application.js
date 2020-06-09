@@ -19,6 +19,7 @@
 
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery.jpostal
 
 $(document).on("turbolinks:load", function(){
 
@@ -81,6 +82,15 @@ $(document).on("turbolinks:load", function(){
       $(".search-form").addClass("open");
       $(".search-form").slideDown("slow");
     };
+  });
+
+  $("#address_zipcode").jpostal({
+    postcode:["#address_zipcode"],
+    address:{
+      "#post_prefecture_code": "%3",
+      "#address_city": "%4%5",
+      "#address_street": "%6%7"
+    }
   });
 
 

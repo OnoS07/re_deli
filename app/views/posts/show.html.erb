@@ -1,6 +1,9 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
+			<% if flash[:notice] %>
+			 	<div class="flash"><%= flash[:notice]%></div>
+			<% end %>
 			<div class="post-container flex">
 				<div class="post-block">
 						<%= attachment_image_tag @post, :post_image, format:"jpg",
@@ -19,7 +22,8 @@
 								<i class="fas fa-paw fa-2x"><%= @post.title %></i><br>
 						</span>
 						<span class="body-text">
-							<%= @post.body %>
+							<%= @post.body %><br>
+							<%= @post.city %>
 						</span><br>
 						<div class="action-text">
 							<i class="far fa-comment"><%= @post.post_comments.count %></i>

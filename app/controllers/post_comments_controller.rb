@@ -6,7 +6,7 @@ class PostCommentsController < ApplicationController
 		@post_comments = @post.post_comments.order(id: "DESC")
 		@post_comment.post_id = @post.id
 		if @post_comment.save
-			flash.now[:notice] = "NEW COMMENT CREATE"
+			flash.now[:comment] = "NEW COMMENT CREATE"
 		end
 	end
 
@@ -17,7 +17,7 @@ class PostCommentsController < ApplicationController
 		@post_comments = @post.post_comments.order(id: "DESC")
 
 		@post_comment.destroy
-		flash.now[:notice] = "DELETE YOUR COMMENT"
+		flash.now[:comment] = "DELETE YOUR COMMENT"
 	end
 
 	private
