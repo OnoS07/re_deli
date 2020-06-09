@@ -14,7 +14,7 @@
 						<%= link_to user_path(@user) do %>
 							<%= attachment_image_tag @user, :profile_image, format:"jpg",
 								size:"100x100", fallback:"no_image.jpg", class:"profile-image" %>
-								<br><%= @user.name %>
+								<br><i class="fas fa-dog"><%= @user.name %></i>
 						<% end %>
 					</div>
 					<div class="text-content">
@@ -23,7 +23,9 @@
 						</span>
 						<span class="body-text">
 							<%= @post.body %><br>
-							<%= @post.city %>
+							<%= link_to map_path(@post) do %>
+								<i class="fas fa-map-marked-alt"></i><%= @post.city %>
+							<% end %>
 						</span><br>
 						<div class="action-text">
 							<i class="far fa-comment"><%= @post.post_comments.count %></i>

@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="input-form">
+        <h2><span class="input-title">Post map</span></h2>
+        <p><%= @post.city %></p>
+          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_x5DyHW1BcioHfe3jDPX0Dj_Fka-5DIM&callback=initMap" async></script>
+          <script type="text/javascript">
+            var map;
+            var marker;
+            var geocoder;
+            function initMap() {
+              geocoder = new google.maps.Geocoder();
+              geocoder.geocode({
+              'address': "<%= @post.city %>" //住所
+              }, function(results, status) {
+                if (status === google.maps.GeocoderStatus.OK) {
+                map = new google.maps.Map(document.getElementById('gmap'), {
+                  center: results[0].geometry.location,
+                  zoom: 17 //ズーム
+               });
+              marker = new google.maps.Marker({
+              position: results[0].geometry.location,
+              map: map
+              });
+              marker.addListener('click', function() {
+                infoWindow.open(map, marker);
+              });
+              } else {
+                alert(status);
+              }
+            });
+          }
+          </script>
+          <div id="gmap"></div>
+      </div>
+    </div>
+  </div>
+</div>
+

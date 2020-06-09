@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get "/" => "users#top"
   get "about" => "users#about"
+  get "posts/:id/map" => "posts#map", as: "map"
   root "users#top"
 
   resources :users, only:[:show, :edit, :update] do
