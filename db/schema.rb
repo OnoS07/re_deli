@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_02_075859) do
+ActiveRecord::Schema.define(version: 2020_06_09_024952) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer "post_id"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 2020_06_02_075859) do
     t.string "post_image_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "prefecture_code"
+    t.string "postal_code"
+    t.string "city"
+    t.string "building"
   end
 
   create_table "relationships", force: :cascade do |t|
