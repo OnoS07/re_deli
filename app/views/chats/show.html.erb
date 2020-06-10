@@ -5,14 +5,8 @@
 				<h2>
 					<span class="input-title"><%= @user.name %> Chat Room</span>
 				</h2>
-				<div class="message" style="width: 100%">
-					<% @chats.each do |chat| %>
-						<% if chat.user_id == current_user.id %>
-							<p class="my_message"><%= chat.message %></p>
-						<% else %>
-							<p class="user_message"><%= chat.message %></p>
-						<% end %>
-					<% end %>
+				<div class="message_<%= @room.id %>" style="padding: 0 10%">
+					<%= render "chat", chats: @chats %>
 				</div>
 				<h3><span class="input-title">New Message</span></h3>
 			      <%= form_with model: @chat, data: {remote: true} do |f| %>

@@ -1,0 +1,21 @@
+<% @chats.each do |chat| %>
+	<% if chat.user_id == current_user.id %>
+		<div class="my_message">
+			<p>
+				<span style="font-size: 10px"><%= chat.created_at.strftime('%H:%M') %></span>
+				<span class="chat"><%= chat.message %></span>
+					<%= attachment_image_tag current_user, :profile_image, format:"jpg",
+				size:"50x50", fallback:"no_image.jpg", class:"profile-image" %>
+			</p>
+		</div>
+	<% else %>
+		<div class="user_message">
+			<p>
+				<%= attachment_image_tag current_user, :profile_image, format:"jpg",
+					size:"50x50", fallback:"no_image.jpg", class:"profile-image" %>
+				<span class="chat"><%= chat.message %></span>
+				<span style="font-size: 10px"><%= chat.created_at.strftime('%H:%M') %></span>
+			</p>
+		</div>
+	<% end %>
+<% end %>

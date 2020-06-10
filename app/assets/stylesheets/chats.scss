@@ -4,8 +4,20 @@
 
 .my_message{
 	text-align: right;
+	padding-left: 40%;
+}
+
+.my_message .chat{
+	border-bottom: 1px solid orange;
+	padding-bottom: 3px;
+	margin-bottom: 1rem;
 }
 
 .user_message{
 	text-align: left;
+	padding-right: 40%;
+}
+
+.chat{
+	font-size: 22px;
 }

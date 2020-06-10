@@ -18,7 +18,11 @@ class ChatsController < ApplicationController
 
   def create
   	@chat = current_user.chats.new(chat_params)
-  	@chat.save
+    @user_rooms = UserRoom.find_by(room_id: @chat.room_id, user_id:current_user.id)
+    @room = @user_rooms.room
+    @chats = @room.chats
+
+    @chat.save
   end
 
   private
