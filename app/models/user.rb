@@ -31,4 +31,8 @@ class User < ApplicationRecord
 	def following?(user)
 	  following_user.include?(user)
 	end
+
+	has_many :user_rooms
+	has_many :cahts
+	has_many :rooms, through: :user_rooms
 end
