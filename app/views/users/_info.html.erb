@@ -6,6 +6,8 @@
 			class:"profile-image" %><br><% end %>
 		<% if user == current_user %>
 			<%= link_to "編集", edit_user_path(user) %>
+		<% else %>
+			<%= link_to "Message", chat_path(user) %>
 		<% end %>
 	</div>
 	<div class="text-content">

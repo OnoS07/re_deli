@@ -33,6 +33,6 @@ class User < ApplicationRecord
 	end
 
 	has_many :user_rooms
-	has_many :cahts
+	has_many :chats
 	has_many :rooms, through: :user_rooms
 end
