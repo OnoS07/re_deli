@@ -57,6 +57,9 @@ class PostsController < ApplicationController
 
 	def map
 		@post = Post.find(params[:id])
+		if @post.postal_code.nil?
+			redirect_to post_path(@post)
+		end
 	end
 
 	private

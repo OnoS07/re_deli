@@ -23,8 +23,10 @@
 						</span>
 						<span class="body-text">
 							<%= @post.body %><br>
-							<%= link_to map_path(@post) do %>
-								<i class="fas fa-map-marked-alt"></i><%= @post.city %>
+							<% unless @post.postal_code.nil? %>
+								<%= link_to map_path(@post) do %>
+									<i class="fas fa-map-marked-alt"></i><%= @post.city %>
+								<% end %>
 							<% end %>
 						</span><br>
 						<div class="action-text">

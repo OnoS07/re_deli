@@ -28,7 +28,9 @@
           <%= f.submit "新規登録", class:"btn btn-warning btn-block" %>
         </div>
       <% end %>
-
+      <span>登録済の方は、
+        <%= link_to "こちら", new_user_session_path, style:"color:blue;" %>よりログインを行ってください
+      </span>
       </div>
     </div>
   </div>
